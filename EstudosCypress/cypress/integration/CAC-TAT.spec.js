@@ -24,7 +24,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('button[type="submit"]').click()
         cy.get('.error').should('be.visible')
     })
-    it('campoo telefone continua vazio quando preenchido com valor não-numerioc', function () {
+    it('campoo telefone continua vazio quando preenchido com valor não-numerico', function () {
         cy.get('#phone')
             .type('asdfgh')
             .should('have.value', '')
@@ -38,32 +38,35 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('button[type="submit"]').click()
         cy.get('.error').should('be.visible')
     })
-    it.only('preenche e limpa os campos nome, sobrenome, email e telefone', function(){
+    it('preenche e limpa os campos nome, sobrenome, email e telefone', function () {
         cy.get('#firstName')
-        .type('Cristiane')
-        .should('have.value' , "Cristiane")
-        .clear()
-        .should('have.value' , "")
+            .type('Cristiane')
+            .should('have.value', "Cristiane")
+            .clear()
+            .should('have.value', "")
 
         cy.get('#lastName')
-        .type('Reis')
-        .should('have.value' , "Reis")
-        .clear()
-        .should('have.value' , "")
-        
+            .type('Reis')
+            .should('have.value', "Reis")
+            .clear()
+            .should('have.value', "")
+
         cy.get('#email')
-        .type('cristianeasreis@exemplo.com')
-        .should('have.value' , "cristianeasreis@exemplo.com")
-        .clear()
-        .should('have.value' , "")
+            .type('cristianeasreis@exemplo.com')
+            .should('have.value', "cristianeasreis@exemplo.com")
+            .clear()
+            .should('have.value', "")
 
         cy.get('#phone')
-        .type('1199996666')
-        .should('have.value', "1199996666")
-        .clear()
-        .should('have.value' , "")
-        
+            .type('1199996666')
+            .should('have.value', "1199996666")
+            .clear()
+            .should('have.value', "")
     })
 
+    it.only('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function(){
+        cy.get('button[type="submit"]').click()
+        cy.get('.error').should('be.visible')
+    })
 
 })
