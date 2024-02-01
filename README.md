@@ -8,12 +8,12 @@
 
 ### Campos do formulário
 
-1.Nome
-2.Sobrenome
-3.Email
-4.Telefone
-5.Produto
-6.Tipo de atendimento
-7.Qual seu meio de contato
-8.Como podemos te ajudar
-9.Adicione um anexo
+1. Nome
+2. Sobrenome
+3. Email
+4. Telefone
+5. Produto
+6. ipo de atendimento
+7. Qual seu meio de contato
+8. Como podemos te ajudar
+9. Adicione um anexo
