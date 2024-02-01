@@ -12,24 +12,58 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('#firstName').type('Cristiane')
         cy.get('#lastName').type('Reis')
         cy.get('#email').type('cristianeasreis@exemplo.com')
-        cy.get('#open-text-area').type(LongText, { delay: 0})
+        cy.get('#open-text-area').type(LongText, { delay: 0 })
         cy.get('button[type="submit"]').click()
         cy.get('.success').should('be.visible')
     })
-
-    it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function(){
+    it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
         cy.get('#firstName').type('Cristiane')
         cy.get('#lastName').type('Reis')
         cy.get('#email').type('cristianeasreis@exemplo,com')
         cy.get('#open-text-area').type('Teste')
         cy.get('button[type="submit"]').click()
         cy.get('.error').should('be.visible')
-
     })
-
-    it.only('campoo telefone continua vazio quando preenchido com valor não-numerioc', function(){
+    it('campoo telefone continua vazio quando preenchido com valor não-numerioc', function () {
         cy.get('#phone')
-        .type('asdfgh')
-        .should('have.value', '')
+            .type('asdfgh')
+            .should('have.value', '')
     })
+    it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', function () {
+        cy.get('#firstName').type('Cristiane')
+        cy.get('#lastName').type('Reis')
+        cy.get('#email').type('cristianeasreis@exemplo.com')
+        cy.get('#phone-checkbox').click()
+        cy.get('#open-text-area').type('Teste')
+        cy.get('button[type="submit"]').click()
+        cy.get('.error').should('be.visible')
+    })
+    it.only('preenche e limpa os campos nome, sobrenome, email e telefone', function(){
+        cy.get('#firstName')
+        .type('Cristiane')
+        .should('have.value' , "Cristiane")
+        .clear()
+        .should('have.value' , "")
+
+        cy.get('#lastName')
+        .type('Reis')
+        .should('have.value' , "Reis")
+        .clear()
+        .should('have.value' , "")
+        
+        cy.get('#email')
+        .type('cristianeasreis@exemplo.com')
+        .should('have.value' , "cristianeasreis@exemplo.com")
+        .clear()
+        .should('have.value' , "")
+
+        cy.get('#phone')
+        .type('1199996666')
+        .should('have.value', "1199996666")
+        .clear()
+        .should('have.value' , "")
+        
+    })
+
+
 })
