@@ -13,7 +13,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('#lastName').type('Reis')
         cy.get('#email').type('cristianeasreis@exemplo.com')
         cy.get('#open-text-area').type(LongText, { delay: 0 })
-        cy.get('button[type="submit"]').click()
+        cy.contains('button', 'Enviar').click()
         cy.get('.success').should('be.visible')
     })
     it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
@@ -21,7 +21,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('#lastName').type('Reis')
         cy.get('#email').type('cristianeasreis@exemplo,com')
         cy.get('#open-text-area').type('Teste')
-        cy.get('button[type="submit"]').click()
+        cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
     it('campoo telefone continua vazio quando preenchido com valor não-numerico', function () {
@@ -35,7 +35,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('#email').type('cristianeasreis@exemplo.com')
         cy.get('#phone-checkbox').click()
         cy.get('#open-text-area').type('Teste')
-        cy.get('button[type="submit"]').click()
+        cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
     it('preenche e limpa os campos nome, sobrenome, email e telefone', function () {
@@ -64,9 +64,15 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             .should('have.value', "")
     })
 
-    it.only('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function(){
-        cy.get('button[type="submit"]').click()
+    it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function(){
+        cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
+
+    it('envia o formuário com sucesso usando um comando customizado', function () {
+        cy.fillMandatoryFieldsAndSubmit()
+        cy.get('.success').should('be.visible')
+    })
+
 
 })
