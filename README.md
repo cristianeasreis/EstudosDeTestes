@@ -1,4 +1,6 @@
-# Estudos de Testes
+# Estudos de Testes - [Automatizados]
+
+#### Projeto simples rodando em maquina local
 
 ## Testes automatizados com Cypress - Básico
 >
