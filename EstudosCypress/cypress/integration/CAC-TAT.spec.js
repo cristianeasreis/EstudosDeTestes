@@ -65,17 +65,17 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             .clear()
             .should('have.value', "")
     })
-// validação do button
+    // validação do button
     it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function () {
         cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
-// validação customizada
+    // validação customizada
     it('envia o formuário com sucesso usando um comando customizado', function () {
         cy.fillMandatoryFieldsAndSubmit()
         cy.get('.success').should('be.visible')
     })
-// Validação de campos usando select
+    // Validação de campos usando select
     it('seleciona um produto (YouTube) por seu texto', function () {
         cy.get('#product')
             .select('YouTube')
@@ -88,10 +88,16 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             .should('have.value', 'mentoria')
     })
 
-    it.only('seleciona um produto (Blog) por seu índice', function () {
+    it('seleciona um produto (Blog) por seu índice', function () {
         cy.get('#product')
             .select(1)
             .should('have.value', 'blog')
+    })
+
+    it.only('marca o tipo de atendimento "Feedback"', function () {
+        cy.get('input[type="radio"][value="feedback"]')
+        .check()
+        .should('have.value', 'feedback')
     })
 
 })
