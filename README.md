@@ -3,7 +3,7 @@
 ####   A aplicação CAC TAT rodando na internet, iremos testar uma versão local, ou seja, o arquivo src/index.html.
 
 ## Testes automatizados com Cypress - Básico
-*>
+
 > Versão do cypress - [npm install cypress@9.5.1 --save-dev],
 >
 > Cenários de testes com cypress - Validação de campos do formulário*
