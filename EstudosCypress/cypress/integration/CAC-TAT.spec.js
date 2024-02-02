@@ -7,6 +7,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     it('verifica o título da aplicação', function () {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
     })
+    // Validação do formulário
     it('preenche os campos obrigatórios e envia o formulário', function () {
         const LongText = 'Teste, Texto, Teste , Texto,Teste, Texto, Teste , Texto,Teste, Texto, Teste , Texto,Teste, Texto, Teste , Texto,Teste, Texto, Teste , Texto,Teste, Texto, Teste , Texto'
         cy.get('#firstName').type('Cristiane')
@@ -38,6 +39,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
+    // Validação usando clear
     it('preenche e limpa os campos nome, sobrenome, email e telefone', function () {
         cy.get('#firstName')
             .type('Cristiane')
@@ -63,17 +65,17 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             .clear()
             .should('have.value', "")
     })
-
+// validação do button
     it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function () {
         cy.contains('button', 'Enviar').click()
         cy.get('.error').should('be.visible')
     })
-
+// validação customizada
     it('envia o formuário com sucesso usando um comando customizado', function () {
         cy.fillMandatoryFieldsAndSubmit()
         cy.get('.success').should('be.visible')
     })
-
+// Validação de campos usando select
     it('seleciona um produto (YouTube) por seu texto', function () {
         cy.get('#product')
             .select('YouTube')
