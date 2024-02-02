@@ -1,12 +1,12 @@
-# Estudos de Testes - [Automatizados]
+#**Estudos de Testes - [Automatizados]**
 
 #### Projeto simples rodando em maquina local
 
 ## Testes automatizados com Cypress - Básico
->
+*>
 > Versão do cypress - [npm install cypress@9.5.1 --save-dev],
 >
-> Cenários de testes com cypress - Validação de campos do formulário
+> Cenários de testes com cypress - Validação de campos do formulário*
 
 ### Campos do formulário
 
