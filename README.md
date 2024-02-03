@@ -1,6 +1,6 @@
 #**Estudos de Testes - [Automatizados]**
 
-####   A aplicação CAC TAT testar uma versão local, ou seja, o arquivo src/index.html.
+####   A aplicação CAC TAT testar em versão local, ou seja, o arquivo src/index.html.
 
 ## Testes automatizados com Cypress - Básico
 
