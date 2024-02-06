@@ -20,5 +20,11 @@
 8. Como podemos te ajudar
 9. Adicione um anexo
 
+
+### Comandos configurado no script para rodar os testes
+`npm run test 
+npm run cy:open
+`
+
 ### comando configurano no script para simular teste mobile
  `npm run cy:open:mobile`
