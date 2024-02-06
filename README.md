@@ -19,3 +19,6 @@
 7. Qual seu meio de contato
 8. Como podemos te ajudar
 9. Adicione um anexo
+
+### comando configurano no script para simular teste mobile
+ `npm run cy:open:mobile`
