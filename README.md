@@ -26,5 +26,5 @@
 npm run cy:open
 `
 
-### comando configurano no script para simular teste mobile
+### Comando configurano no script para simular teste mobile
  `npm run cy:open:mobile`
