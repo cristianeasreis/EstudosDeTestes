@@ -1,4 +1,4 @@
-#**Estudos de Testes - [Automatizados]**
+# **Estudos de Testes - [Automatizados]**
 
 ####   A aplicação CAC TAT testar em versão local, ou seja, o arquivo src/index.html.
 
@@ -22,9 +22,9 @@
 
 
 ### Comandos configurado no script para rodar os testes
-`npm run test 
-npm run cy:open
-`
+`npm run test `
+`npm run cy:open`
+
 
 ### Comando configurano no script para simular teste mobile
  `npm run cy:open:mobile`
