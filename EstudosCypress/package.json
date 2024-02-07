@@ -9,7 +9,6 @@
     "test": "cypress run",
     "test:mobile": "cypress run --config viewportWidth=420 viewportHeight=860"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cristianeasreis/EstudosDeTestes"
@@ -23,5 +22,8 @@
   ],
   "author": "Cristiane Araujo Souza dos Reis <cristianeasreis@hotmail.com>",
   "license": "MIT",
-  "homepage": "git+https://github.com/cristianeasreis/EstudosDeTestes"
+  "homepage": "git+https://github.com/cristianeasreis/EstudosDeTestes",
+  "dependencies": {
+    "cypress": "^13.6.4"
+  }
 }
